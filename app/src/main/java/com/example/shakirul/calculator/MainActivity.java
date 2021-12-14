@@ -117,9 +117,90 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                if (edt1 == null) {
+                    edt1.setText("");
+                } else {
+                    mValueOne = Float.parseFloat(edt1.getText() + "");
+                    mAddition = true;
+                    edt1.setText(null);
+                }
+            }
+        });
+
+        buttonSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(edt1.getText() + "");
+                mSubtract = true;
+                edt1.setText(null);
+            }
+        });
+
+        buttonMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(edt1.getText() + "");
+                mMultiplication = true;
+                edt1.setText(null);
+            }
+        });
+
+        buttonDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(edt1.getText() + "");
+                mDivision = true;
+                edt1.setText(null);
+            }
+        });
+
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueTwo = Float.parseFloat(edt1.getText() + "");
+
+                if (mAddition == true) {
+
+                    edt1.setText(mValueOne + mValueTwo + "");
+                    mAddition = false;
+                }
+
+
+                if (mSubtract == true) {
+                    edt1.setText(mValueOne - mValueTwo + "");
+                    mSubtract = false;
+                }
+
+                if (mMultiplication == true) {
+                    edt1.setText(mValueOne * mValueTwo + "");
+                    mMultiplication = false;
+                }
+
+                if (mDivision == true) {
+                    edt1.setText(mValueOne / mValueTwo + "");
+                    mDivision = false;
+                }
+            }
+        });
+
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edt1.setText("");
+            }
+        });
+
+        button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edt1.setText(edt1.getText() + ".");
+            }
+        });
     }
 }
 
 
-}
